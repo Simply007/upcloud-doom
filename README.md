@@ -201,6 +201,12 @@ UpCloud provides a CLI for managing your Kubernetes cluster (`upctl`), but for d
 
 When using a trial account on UpCloud, Kubernetes pods might be disabled by default. You may need to contact UpCloud support or upgrade your account with a one-time payment of at least €10 to lift these restrictions.
 
+The error if you don't have the trial restrictions lifted:
+
+```plan
+Kubernetes pods are currently disabled during trial. Please contact UpCloud support, or make a one-time payment of €10 or more to remove trial account restrictions.
+```
+
 ### Docker Platform and Buildx
 
 If you encounter errors like:
@@ -232,7 +238,7 @@ In such cases, you can try to use `kubectl exec` for in-pod troubleshooting, use
 
 ### Game Setup Nuances
 
-- The noVNC service might only work on specific ports.
+- The noVNC service might only work on specific ports 6080 did now rok for me, so I switched to 80.
 - Audio and MIDI playback can be tricky in headless containers.
 - Startup timing may require additional delays (using sleep commands) to ensure all services are ready before the game starts.
 
@@ -240,7 +246,7 @@ In such cases, you can try to use `kubectl exec` for in-pod troubleshooting, use
 
 ## Possible Improvements
 
-- CI/CD deployment using i.e. GitHub actions
+- 💡 CI/CD deployment using i.e. GitHub actions (and make a PR to [GitHub templates](https://github.com/actions/starter-workflows/tree/main/deployments as Deploy to UpCloud to UKS)
 - React to game events and trigger actions (e.g. sending a message to a Slack channel when a player dies)
 - Implement a game server for multiplayer games
 - Use persistent storage for save games and high scores

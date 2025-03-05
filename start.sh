@@ -21,3 +21,4 @@ sleep 1
 export SDL_AUDIODRIVER=dummy
 
 exec chocolate-doom -noxkb -iwad /usr/share/games/doom/freedoom1.wad
+~
